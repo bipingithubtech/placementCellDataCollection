@@ -5,6 +5,8 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import router from "./src/routes/UserRotes.js";
+import StudentRoute from "./src/routes/StudentRotes.js";
+import InterviewRoute from "./src/routes/InterviewRoute.js";
 
 dotenv.config();
 const app = express();
@@ -13,6 +15,8 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/api/user", router);
+app.use("/api/student", StudentRoute);
+app.use("api/interviews", InterviewRoute);
 const connectDb = async () => {
   try {
     await mongoose.connect(process.env.url); // Ensure correct env variable name
