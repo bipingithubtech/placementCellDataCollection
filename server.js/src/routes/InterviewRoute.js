@@ -68,8 +68,8 @@ InterviewRoute.put("updateInterview/:id", async (req, res) => {
       { companyName, date, batchId },
       { new: true }
     );
-    const UpdatedInterView = await findInterview.save();
-    res.status(200).json(UpdatedInterView);
+
+    res.status(200).json(findInterview);
   } catch (error) {
     res.status(500).json(error);
   }
