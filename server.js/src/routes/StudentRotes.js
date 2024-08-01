@@ -4,8 +4,12 @@ import Student from "../model/StudentModel.js";
 const StudentRoute = express.Router();
 
 StudentRoute.post("/create", async (req, res) => {
+  const { name, college, status, batchId } = req.body;
   try {
-    const Students = new Student(req.body);
+    if (!name || !college || !status) {
+      return res.status(400).json({ message: "Missing required fields" });
+    }
+    const Students = new Student({ name, college, status, batchId });
     const newStudent = await Students.save();
     res.status(200).json(newStudent);
   } catch (error) {

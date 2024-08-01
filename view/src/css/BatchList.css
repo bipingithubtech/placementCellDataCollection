@@ -1,0 +1,75 @@
+/* Container for the entire component */
+.batch-list-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-image: url('https://plus.unsplash.com/premium_vector-1720875324637-780ad74fe9f1?q=80&w=1604&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+  }
+  
+  /* Style for the batch list section */
+  .batch-list {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  /* Style each batch box */
+  .batch-box {
+    background: rgba(255, 255, 255, 0.9); /* White background with opacity */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Border shadow */
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .batch-box:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+  }
+  
+  /* Style for the form container */
+  .form-container {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9); /* White background with opacity */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Border shadow */
+    padding: 20px;
+  }
+  
+  /* Style for input fields and button */
+  input {
+    display: block;
+    width: calc(100% - 22px); /* Full width with padding */
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  input:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker background on hover */
+  }
+  

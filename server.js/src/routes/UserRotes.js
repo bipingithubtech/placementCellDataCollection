@@ -9,9 +9,9 @@ const router = express.Router();
 router.post("/register", async (req, res) => {
   try {
     console.log(req.body);
-    const { username, email, password } = req.body;
+    const { name, email, password } = req.body;
 
-    if (!username || !email || !password) {
+    if (!name || !email || !password) {
       return res
         .status(400)
         .json({ error: "Username, email, and password are required" });
@@ -20,7 +20,7 @@ router.post("/register", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     const newUser = new User({
-      username,
+      name,
       email,
       password: hashedPassword,
     });
@@ -45,7 +45,7 @@ router.post("/login", async (req, res) => {
     const result = await bcrypt.compare(password, user.password);
     if (result) {
       const token = jwt.sign(
-        { _id: user._id, email: user.email, username: user.username },
+        { _id: user._id, email: user.email, name: user.name },
         process.env.jwt,
         { expiresIn: "1d" }
       );
@@ -59,7 +59,7 @@ router.post("/login", async (req, res) => {
         })
         .json({
           token,
-          user: { _id: user._id, email: user.email, username: user.username },
+          user: { _id: user._id, email: user.email, name: user.username },
         });
     } else {
       return res.status(400).json({ message: "Invalid email or password" });
@@ -83,7 +83,7 @@ router.get("/logout", (req, res) => {
 });
 router.get("/refetch", async (req, res) => {
   const token = req.cookies.jwtToken;
-  jwt.verify(token, process.env.secret, {}, async (err, data) => {
+  jwt.verify(token, process.env.jwt, {}, async (err, data) => {
     if (err) {
       res.status(500);
     } else {

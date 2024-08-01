@@ -13,6 +13,7 @@ const batchSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  course: { type: String, required: true },
 });
 
 const Batch = mongoose.model("Batch", batchSchema);
