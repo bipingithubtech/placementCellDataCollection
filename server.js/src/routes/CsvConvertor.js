@@ -2,11 +2,11 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 import { format } from "fast-csv";
-import Student from "../model/StudentModel.js";
-import Interview from "../model/InterviewModel.js";
-import Result from "../model/ResultModel.js";
-import internal from "stream";
+import { fileURLToPath } from "url";
 
+import Result from "../model/ResultModel.js";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const CsvRoutes = express.Router();
 
 CsvRoutes.get("/generateCsv", async (req, res) => {
@@ -28,7 +28,7 @@ CsvRoutes.get("/generateCsv", async (req, res) => {
         webdFinalScore: student.courseScores.webdFinalScore,
         reactFinalScore: student.courseScores.reactFinalScore,
         InterviewCompany: interview.companyName,
-        interviewDate: internal.date,
+
         interviewStudentResult: result.result,
       };
     });
