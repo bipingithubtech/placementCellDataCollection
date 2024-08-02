@@ -15,6 +15,7 @@ import BatchList from "./Component/BatchList";
 import UpdateStudent from "./Component/UpdateStudent";
 import ListInterview from "./Component/ListInterview";
 import CreteResult from "./Component/CreteResult";
+import Download from "./Component/Download";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           <Route path="/updatePage/:id" element={<UpdateStudent />}></Route>
           <Route path="/listInterview" element={<ListInterview />}></Route>
           <Route path="/createResult" element={<CreteResult />}></Route>
+          <Route path="/downloadcsv" element={<Download />}>
+            {" "}
+          </Route>
         </Routes>
       </BrowserRouter>
     </UserProvider>

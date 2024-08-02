@@ -35,6 +35,13 @@ const Home = () => {
             Create
           </Link>
         </div>
+        <div className="card">
+          <h2>Download </h2>
+          <p>Download the students results</p>
+          <Link to="/downloadcsv" className="link-button">
+            Create
+          </Link>
+        </div>
       </div>
       <footer className="footer">
         <p>&copy; 2024 Your Company</p>
