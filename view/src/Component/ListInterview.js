@@ -30,7 +30,7 @@ const ListInterview = () => {
               <h4>Allocated Students:</h4>
               <ul>
                 {interview.allocatedStudents.map((studentId) => (
-                  <li key={studentId._id}>{studentId.name}</li> // Fetch student names for better display
+                  <li key={studentId._id}>{studentId.name}</li>
                 ))}
               </ul>
             </div>

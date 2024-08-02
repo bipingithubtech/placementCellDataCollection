@@ -14,6 +14,7 @@ import AddStudent from "./Component/AddStudent";
 import BatchList from "./Component/BatchList";
 import UpdateStudent from "./Component/UpdateStudent";
 import ListInterview from "./Component/ListInterview";
+import CreteResult from "./Component/CreteResult";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/batch" element={<BatchList />}></Route>
           <Route path="/updatePage/:id" element={<UpdateStudent />}></Route>
           <Route path="/listInterview" element={<ListInterview />}></Route>
+          <Route path="/createResult" element={<CreteResult />}></Route>
         </Routes>
       </BrowserRouter>
     </UserProvider>

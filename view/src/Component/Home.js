@@ -28,6 +28,13 @@ const Home = () => {
             Go to Student List
           </Link>
         </div>
+        <div className="card">
+          <h2>Result</h2>
+          <p>Create student result</p>
+          <Link to="/createResult" className="link-button">
+            Create
+          </Link>
+        </div>
       </div>
       <footer className="footer">
         <p>&copy; 2024 Your Company</p>

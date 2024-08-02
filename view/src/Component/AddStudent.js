@@ -10,6 +10,11 @@ const AddStudentForm = () => {
     name: "",
     college: "",
     status: "not_placed",
+    courseScores: {
+      dsaFinalScore: "",
+      webdFinalScore: "",
+      reactFinalScore: "",
+    },
     batchId: "",
   });
   const [batches, setBatches] = useState([]);
@@ -29,7 +34,19 @@ const AddStudentForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+
+    if (name.startsWith("courseScores.")) {
+      const scoreName = name.split(".")[1];
+      setForm((prev) => ({
+        ...prev,
+        courseScores: {
+          ...prev.courseScores,
+          [scoreName]: value,
+        },
+      }));
+    } else {
+      setForm((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -93,6 +110,36 @@ const AddStudentForm = () => {
                 </option>
               ))}
             </select>
+          </div>
+          <div>
+            <label>DSA Final Score</label>
+            <input
+              type="number"
+              name="courseScores.dsaFinalScore"
+              value={form.courseScores.dsaFinalScore}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label>Web Development Final Score</label>
+            <input
+              type="number"
+              name="courseScores.webdFinalScore"
+              value={form.courseScores.webdFinalScore}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label>React Final Score</label>
+            <input
+              type="number"
+              name="courseScores.reactFinalScore"
+              value={form.courseScores.reactFinalScore}
+              onChange={handleChange}
+              required
+            />
           </div>
           <button type="submit">Add Student</button>
         </form>
