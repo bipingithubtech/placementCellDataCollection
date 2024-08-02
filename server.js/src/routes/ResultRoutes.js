@@ -5,6 +5,27 @@ import Student from "../model/StudentModel.js";
 
 const ResultRoutes = express.Router();
 
+// Add Result
+ResultRoutes.post("/addResult", async (req, res) => {
+  const { interviewId, studentId, result } = req.body;
+
+  try {
+    // Create a new result
+    const newResult = new Result({
+      interview: interviewId,
+      student: studentId,
+      result,
+    });
+
+    // Save to the database
+    await newResult.save();
+
+    res.status(201).json(newResult);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 // get students their reslut for specific interview
 ResultRoutes.get("/student/:id", async (req, res) => {
   const { id } = req.params;

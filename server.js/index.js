@@ -31,6 +31,7 @@ app.use("/api/interviews", InterviewRoute);
 app.use("/api/StudentResult", ResultRoutes);
 app.use("/api/csv", CsvRoutes);
 app.use("/api/batches", BatchRoter);
+
 const connectDb = async () => {
   try {
     await mongoose.connect(process.env.url); // Ensure correct env variable name
