@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/Registration.css";
+import { Link } from "react-router-dom";
 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -96,6 +97,15 @@ const SignUp = () => {
               />
             </div>
             <button type="submit">Register</button>
+            <p style={{ fontSize: "25px", color: "GrayText" }}>
+              already register ?
+            </p>
+            <Link
+              to="/login"
+              style={{ textDecoration: "none", color: "green" }}
+            >
+              Login
+            </Link>
           </form>
         </div>
       </div>

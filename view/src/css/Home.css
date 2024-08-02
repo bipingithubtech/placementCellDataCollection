@@ -1,0 +1,93 @@
+/* Home.css */
+
+/* Container for the home page */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa, #3a7fee);
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Title styling */
+  .home-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Container for cards */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  
+    margin-bottom: 100px;
+
+
+
+
+  }
+  
+  /* Styling for each card */
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 250px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  }
+  
+  /* Hover effect for cards */
+  .card:hover {
+    transform: scale(1.05); /* Enlarge the card */
+    border: 3px solid green; /* Add green border */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  }
+  
+  /* Title and paragraph styling */
+  .card h2 {
+    margin-top: 0;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+    color: #464444;
+  }
+  
+  /* Styling for link buttons */
+  .link-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for link buttons */
+  .link-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Footer styling */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  

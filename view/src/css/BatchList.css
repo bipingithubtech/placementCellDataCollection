@@ -17,7 +17,7 @@
   
   /* Style each batch box */
   .batch-box {
-    background: rgba(255, 255, 255, 0.9); /* White background with opacity */
+    background: rgba(217, 224, 238, 0.9); /* White background with opacity */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Border shadow */
     padding: 15px;

@@ -2,20 +2,47 @@
 
 /* Main container for the navbar */
 .nav_main {
-    background-color: #060231; /* Green background for the navbar */
+    background-color: #05011a; /* Green background for the navbar */
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 12px 4px 6px rgba(248, 248, 247, 0.1);
     height: 100px;
   }
+  .nav_main:hover{
+   border: 2px solid green;
+ 
+  }
+  .user_exist {
+    font-size: 2rem;
+    margin-right: 10px;
+    color: aliceblue;
+  }
+  .nav_user{
+    margin-left: 100px;
+  }
+  
+  .user_name {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-right: 20px; /* Space between user info and logout button */
+    text-transform: uppercase;
+  }
+  
+  /* Styling for user status icon */
+  .fa-user-slash {
+    font-size: 2rem;
+    color: #fff;
+  }
+ 
+
   
   /* Navbar heading */
   .nav_main h2 {
     margin: 0;
     font-size: 35px;
-    color: rgb(240, 240, 243);
+    color: rgb(245, 245, 247);
   }
   
   /* Link styles in the heading */
@@ -33,13 +60,7 @@
 
   
   
-  
-  .search-input {
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    width: 200px; /* Adjust width as needed */
-  }
+
   
 
   
@@ -53,6 +74,7 @@
     width: 500px;
     justify-content: space-around;
   }
+
   
   .list li {
     margin: 0 15px; /* Space between each list item */
@@ -70,6 +92,7 @@
   .list a:hover {
     color: #cf6807; /* Light color for hover effect */
   }
+  
   
   /* Mobile responsiveness */
   @media (max-width: 768px) {
@@ -107,11 +130,6 @@
   display: flex;
   align-items: center; /* Center the icon and text vertically */
   margin-left: 200px;
-}
-
-.logout-link {
-  display: flex;
-  align-items: center;
   text-decoration: none; /* Remove default underline */
   color: #e9660e; /* Default text color */
   font-size: 16px; /* Adjust font size as needed */
@@ -119,10 +137,14 @@
   font-size: 30px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
+
+
 .logout-link:hover {
-  color: #007bff; /* Change color on hover */
+  color: #ec2409; /* Change color on hover */
 }
 
 .logout-icon {

@@ -1,0 +1,72 @@
+/* InterviewsList.css */
+.interviews-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color: #b5bae6;
+    height: 100vh;
+    position: relative;;
+    
+  }
+  
+  .interview-box {
+    background: #e9e6e6;
+ 
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    position: absolute;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, rgba(140, 94, 247, 0.5), rgba(209, 209, 241, 0.5)); /* Gradient with transparency */
+
+
+  }
+  
+  .interview-box:hover {
+    transform: scale(1.05);
+  }
+  
+  .interview-box h3 {
+    margin: 0;
+    font-size: 3rem;
+    color: #131212;
+    text-transform: capitalize;
+    margin-top: 10px;
+  }
+  
+  .interview-box p {
+    margin: 5px 0;
+    font-size: 1.5rem;
+    color: #2b2a2a;
+    margin-top: 20px;
+  }
+  
+  .students-list {
+    margin-top: 20px;
+  }
+  
+  .students-list h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .students-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .students-list li {
+    margin-top: 10px;
+        font-size: 1.3rem;
+    color: #1a1919;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+  

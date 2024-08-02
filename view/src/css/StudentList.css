@@ -4,14 +4,20 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
+  position: relative;
+  background-color: #c6d8eb;
+  height: 100vh;
 }
 
 .student-card {
-  background: #fff;
+  background: linear-gradient(to right, #7f7ee7, #b4b1d4);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 250px;
+  width: 350px;
+  height: 300px;;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+
   text-align: center;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -24,11 +30,14 @@
 
 .student-info h3 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  margin-top: 30px;
 }
 
 .student-info p {
   margin: 5px 0;
+  font-size: 1.5rem;
 }
 
 .student-actions {
@@ -47,6 +56,7 @@
   font-size: 1rem;
   padding: 8px 12px;
   transition: background 0.3s ease;
+  margin-top: 50px;
 }
 
 .student-actions button:hover {

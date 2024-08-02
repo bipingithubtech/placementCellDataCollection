@@ -12,6 +12,8 @@ import Interview from "./Component/Interview";
 import StudentList from "./Component/StudentList";
 import AddStudent from "./Component/AddStudent";
 import BatchList from "./Component/BatchList";
+import UpdateStudent from "./Component/UpdateStudent";
+import ListInterview from "./Component/ListInterview";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/studentList" element={<StudentList />}></Route>
           <Route path="/addStudent" element={<AddStudent />}></Route>
           <Route path="/batch" element={<BatchList />}></Route>
+          <Route path="/updatePage/:id" element={<UpdateStudent />}></Route>
+          <Route path="/listInterview" element={<ListInterview />}></Route>
         </Routes>
       </BrowserRouter>
     </UserProvider>

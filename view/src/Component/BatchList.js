@@ -52,9 +52,17 @@ const BatchList = () => {
         <ul>
           {batches.map((batch) => (
             <li key={batch._id} className="batch-box">
-              <h3>{batch.batchName}</h3>
-              <p>Course: {batch.course}</p>
-              <p>
+              <h3
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "2rem",
+                  textTransform: "capitalize",
+                }}
+              >
+                {batch.batchName}
+              </h3>
+              <p style={{ fontSize: "1.5rem" }}>Course: {batch.course}</p>
+              <p style={{ fontSize: "1.5rem" }}>
                 {new Date(batch.startDate).toLocaleDateString()} to{" "}
                 {new Date(batch.endDate).toLocaleDateString()}
               </p>

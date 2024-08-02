@@ -1,6 +1,6 @@
 /* Background styling for body */
 .main {
-    background-color: #a8c0e0;
+    background-color: #dfe8f5;
       position: relative;
       margin: 0;
       padding: 0;
@@ -16,14 +16,14 @@
       position: relative;
       width: 400px;
     
-    
+    background-color: #ddcfff;
       margin: auto;
       padding: 20px;
     
-      border-radius: 4px solid rgb(17, 17, 17);
+    
       color: rgb(247, 238, 238);
        font-size: 30px;
-      box-shadow: 10px 10px 10px 10px rgba(231, 230, 230, 0.2); /* Shadow for better visibility */
+      box-shadow: 10px 10px 10px 10px rgba(53, 52, 52, 0.2); /* Shadow for better visibility */
       animation: fadeIn 1s ease-out;
   }
   

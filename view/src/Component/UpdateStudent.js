@@ -1,21 +1,33 @@
-// src/components/AddStudentForm.js
-
-import React, { useState, useEffect } from "react";
+import React from "react";
+import "../css/AddStudent.css";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import "../css/AddStudent.css"; // Import the CSS file
+import { useNavigate, useParams } from "react-router-dom";
 
-const AddStudentForm = () => {
+const UpdateStudent = () => {
   const [form, setForm] = useState({
     name: "",
     college: "",
     status: "not_placed",
     batchId: "",
   });
-  const [batches, setBatches] = useState([]);
-  const navigate = useNavigate();
-
+  const [student, setStudent] = useState(null);
+  const { id } = useParams();
   useEffect(() => {
+    const fetchallStudent = async () => {
+      try {
+        const res = await axios.get(`http://localhost:8000/api/student/${id}`);
+        setStudent(res.data);
+        setForm({
+          name: res.data.name,
+          college: res.data.college,
+          status: res.data.status,
+          batchId: res.data.batchId,
+        });
+      } catch (err) {
+        console.error("Error fetching student data:", err);
+      }
+    };
     const fetchBatches = async () => {
       try {
         const res = await axios.get("http://localhost:8000/api/batches");
@@ -24,8 +36,11 @@ const AddStudentForm = () => {
         console.error("Error fetching batches:", err);
       }
     };
+    fetchallStudent();
     fetchBatches();
-  }, []);
+  }, [id]);
+  const [batches, setBatches] = useState([]);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,7 +50,11 @@ const AddStudentForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/api/student/create", form);
+      const res = await axios.put(
+        `http://localhost:8000/api/student/update/${id}`,
+        form
+      );
+      console.log(res.data);
       navigate("/");
     } catch (err) {
       console.error("Error adding student:", err);
@@ -45,7 +64,7 @@ const AddStudentForm = () => {
   return (
     <div className="container">
       <div className="form-container">
-        <h2>Add Student</h2>
+        <h2>Update Details</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <label>Name</label>
@@ -94,7 +113,7 @@ const AddStudentForm = () => {
               ))}
             </select>
           </div>
-          <button type="submit">Add Student</button>
+          <button type="submit">update</button>
         </form>
       </div>
       <div className="image-container">
@@ -108,4 +127,4 @@ const AddStudentForm = () => {
   );
 };
 
-export default AddStudentForm;
+export default UpdateStudent;

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import "../css/StudentList.css";
 import axios from "axios";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const StudentList = () => {
   const [students, setStudents] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const FetchStudents = async () => {
@@ -31,6 +33,9 @@ const StudentList = () => {
       console.error("Error deleting student:", err);
     }
   };
+  const handleUpdate = (id) => {
+    navigate(`/updatePage/${id}`);
+  };
 
   return (
     <div className="student-list">
@@ -40,13 +45,13 @@ const StudentList = () => {
             <h3>{student.name}</h3>
             <p>College: {student.college}</p>
             <p>Status: {student.status}</p>
-            <p>Batch: {student.batchName}</p>{" "}
+            <p>Batch: {student.batchId.batchName}</p>{" "}
             {/* Assuming batchName is part of student data */}
           </div>
           <div className="student-actions">
-            {/* <button onClick={() => handleUpdate(student._id)}>
+            <button onClick={() => handleUpdate(student._id)}>
               <FaEdit /> Edit
-            </button> */}
+            </button>
             <button onClick={() => handleDelete(student._id)}>
               <FaTrash /> Delete
             </button>
