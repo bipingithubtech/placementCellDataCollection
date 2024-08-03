@@ -11,12 +11,14 @@ import InterviewRoute from "./src/routes/InterviewRoute.js";
 import ResultRoutes from "./src/routes/ResultRoutes.js";
 import CsvRoutes from "./src/routes/CsvConvertor.js";
 import BatchRoter from "./src/routes/BatchRoute.js";
+import path from "path";
 
 dotenv.config();
 const app = express();
 
 app.use(cookieParser());
 app.use(express.json());
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const corsOptions = {
@@ -24,6 +26,9 @@ const corsOptions = {
   credentials: true, // enable set cookie
 };
 app.use(cors(corsOptions));
+const _dirname = path.dirname("");
+const buildpath = path.join(_dirname, "../view/build");
+app.use(express.static(buildpath));
 
 app.use("/api/user", router);
 app.use("/api/student", StudentRoute);
@@ -34,7 +39,7 @@ app.use("/api/batches", BatchRoter);
 
 const connectDb = async () => {
   try {
-    await mongoose.connect(process.env.url); // Ensure correct env variable name
+    await mongoose.connect(process.env.MONGO_URI); // Ensure correct env variable name
     console.log("DB connected successfully");
   } catch (error) {
     console.log("Error while connecting to DB", error); // Added error logging

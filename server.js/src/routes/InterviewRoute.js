@@ -8,7 +8,7 @@ const InterviewRoute = express.Router();
 // get all interview
 InterviewRoute.get("/allInterview", async (req, res) => {
   try {
-    const Interviews = await Interview.find({})
+    const Interviews = await Interview.find()
       .populate("batchId")
       .populate("allocatedStudents");
     res.status(200).json(Interviews);
