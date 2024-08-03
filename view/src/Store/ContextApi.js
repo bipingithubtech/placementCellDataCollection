@@ -9,7 +9,7 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     const getAccessToken = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/user/refetch", {
+        const res = await axios.get("api/user/refetch", {
           withCredentials: true,
         });
         console.log("Fetched token:", res.data); // Log response data

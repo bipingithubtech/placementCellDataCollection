@@ -6,7 +6,7 @@ const Download = () => {
       const response = await axios({
         url: "http://localhost:8000/api/csv/generateCsv",
         method: "GET",
-        responseType: "blob", // important
+        responseType: "blob",
       });
       // Create a URL for the file and trigger the download
       const url = window.URL.createObjectURL(new Blob([response.data]));
