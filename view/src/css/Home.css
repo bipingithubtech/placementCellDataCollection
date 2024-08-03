@@ -11,11 +11,25 @@
     text-align: center;
     padding: 20px;
   }
+  .card:hover {
+    transform: scale(1.05); /* Enlarge the card */
+    
+    /* Add green border */
+    box-shadow:
+    0px 0px 10px rgba(61, 241, 6, 0.5), /* Blue shadow */
+    0px 0px 15px rgba(98, 240, 128, 0.5), /* Green shadow */
+    0px 0px 20px rgba(133, 248, 181, 0.5), /* Dark Blue shadow */
+    0px 0px 25px rgba(141, 195, 245, 0.5); /* Enhanced shadow with multiple colors */
+  }
   
+  /* Move heading a little bit up on hover */
+  .card:hover h2 {
+    transform: translateY(-5px); /* Move heading up */
+  }
   /* Title styling */
   .home-title {
     font-size: 2.5rem;
-    color: #333;
+    color: #353434;
     margin-bottom: 20px;
   }
   
@@ -45,11 +59,7 @@
   }
   
   /* Hover effect for cards */
-  .card:hover {
-    transform: scale(1.05); /* Enlarge the card */
-    border: 3px solid green; /* Add green border */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
-  }
+  
   
   /* Title and paragraph styling */
   .card h2 {
@@ -57,8 +67,9 @@
   }
   
   .card p {
-    font-size: 0.9rem;
+    font-size: 17px;
     color: #464444;
+    font-weight: bolder;
   }
   
   /* Styling for link buttons */

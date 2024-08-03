@@ -34,6 +34,7 @@ const ListInterview = () => {
                 ))}
               </ul>
             </div>
+            <button className="delete-button">Delete</button>
           </div>
         ))
       ) : (
