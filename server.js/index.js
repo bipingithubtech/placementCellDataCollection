@@ -46,7 +46,7 @@ const connectDb = async () => {
   }
 };
 
-const port = process.env.PORT || 3000; // Default to port 3000 if not set
+const port = process.env.PORT; // Default to port 3000 if not set
 app.listen(port, () => {
   console.log(`Listening to port number ${port}`);
   connectDb();
