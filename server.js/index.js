@@ -39,7 +39,7 @@ app.use("/api/batches", BatchRoter);
 
 const connectDb = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI); // Ensure correct env variable name
+    await mongoose.connect(process.env.MONGO_URL); // Ensure correct env variable name
     console.log("DB connected successfully");
   } catch (error) {
     console.log("Error while connecting to DB", error); // Added error logging
