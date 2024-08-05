@@ -18,9 +18,9 @@ ResultRoutes.post("/addResult", async (req, res) => {
     });
 
     // Save to the database
-    await newResult.save();
+    const results = await newResult.save();
 
-    res.status(201).json(newResult);
+    res.status(201).json(results);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

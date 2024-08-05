@@ -96,7 +96,7 @@ InterviewRoute.put("updateInterview/:id", async (req, res) => {
 
 // delete Interview
 
-InterviewRoute.delete("/delete/:id", async (req, res) => {
+InterviewRoute.delete("//:id", async (req, res) => {
   const { id } = req.params;
   try {
     const deleteInterview = await Interview.findByIdAndDelete(id);

@@ -11,7 +11,6 @@ import InterviewRoute from "./src/routes/InterviewRoute.js";
 import ResultRoutes from "./src/routes/ResultRoutes.js";
 import CsvRoutes from "./src/routes/CsvConvertor.js";
 import BatchRoter from "./src/routes/BatchRoute.js";
-import path from "path";
 
 dotenv.config();
 const app = express();
@@ -26,9 +25,8 @@ const corsOptions = {
   credentials: true, // enable set cookie
 };
 app.use(cors(corsOptions));
-const _dirname = path.dirname("");
-const buildpath = path.join(_dirname, "../view/build");
-app.use(express.static(buildpath));
+
+app.use(express.static("build"));
 
 app.use("/api/user", router);
 app.use("/api/student", StudentRoute);
