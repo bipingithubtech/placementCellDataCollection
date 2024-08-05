@@ -19,14 +19,10 @@ const SignUp = () => {
   const HandleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "http://localhost:8000/api/user/register",
-        register,
-        {
-          withCredentials: true,
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+      const res = await axios.post("/api/user/register", register, {
+        withCredentials: true,
+        headers: { "Content-Type": "application/json" },
+      });
       console.log(res.data);
       setRegister({
         name: "",

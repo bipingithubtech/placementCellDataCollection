@@ -15,11 +15,9 @@ const Login = () => {
       email,
       password,
     };
-    const res = await axios.post(
-      "http://localhost:8000/api/user/login",
-      userData,
-      { withCredentials: true }
-    );
+    const res = await axios.post("/api/user/login", userData, {
+      withCredentials: true,
+    });
     setToken(res.data);
     navigate("/");
   };

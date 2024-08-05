@@ -16,7 +16,7 @@ const UpdateStudent = () => {
   useEffect(() => {
     const fetchallStudent = async () => {
       try {
-        const res = await axios.get(`http://localhost:8000/api/student/${id}`);
+        const res = await axios.get(`/api/student/${id}`);
         setStudent(res.data);
         setForm({
           name: res.data.name,
@@ -30,7 +30,7 @@ const UpdateStudent = () => {
     };
     const fetchBatches = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/batches");
+        const res = await axios.get("/api/batches");
         setBatches(res.data);
       } catch (err) {
         console.error("Error fetching batches:", err);
@@ -50,10 +50,7 @@ const UpdateStudent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(
-        `http://localhost:8000/api/student/update/${id}`,
-        form
-      );
+      const res = await axios.put(`/api/student/update/${id}`, form);
       console.log(res.data);
       navigate("/");
     } catch (err) {

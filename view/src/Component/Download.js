@@ -4,7 +4,7 @@ const Download = () => {
   const handleDownload = async () => {
     try {
       const response = await axios({
-        url: "http://localhost:8000/api/csv/generateCsv",
+        url: "/api/csv/generateCsv",
         method: "GET",
         responseType: "blob",
       });

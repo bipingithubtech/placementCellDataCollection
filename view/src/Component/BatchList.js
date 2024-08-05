@@ -17,7 +17,7 @@ const BatchList = () => {
   };
   const getBatches = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/batches");
+      const res = await axios.get("/api/batches");
       setBatches(res.data);
     } catch (err) {
       console.error(err);
@@ -32,13 +32,13 @@ const BatchList = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/api/batches/create", batchData);
+      await axios.post("/api/batches/create", batchData);
       setBatchName("");
       setStartDate("");
       setEndDate("");
       setCourse("");
       // Optionally, refresh the list of batches
-      const res = await axios.get("http://localhost:8000/api/batches");
+      const res = await axios.get("/api/batches");
       setBatches(res.data);
     } catch (err) {
       console.error(err);

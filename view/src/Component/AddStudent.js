@@ -23,7 +23,7 @@ const AddStudentForm = () => {
   useEffect(() => {
     const fetchBatches = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/batches");
+        const res = await axios.get("/api/batches");
         setBatches(res.data);
       } catch (err) {
         console.error("Error fetching batches:", err);
@@ -52,7 +52,7 @@ const AddStudentForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/api/student/create", form);
+      await axios.post("/api/student/create", form);
       navigate("/");
     } catch (err) {
       console.error("Error adding student:", err);

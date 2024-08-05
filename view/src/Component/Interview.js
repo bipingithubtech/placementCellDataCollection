@@ -15,7 +15,7 @@ const Interview = () => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/student/getall");
+        const res = await axios.get("/api/student/getall");
         setStudents(res.data);
       } catch (error) {
         console.error("Error fetching students:", error);
@@ -24,7 +24,7 @@ const Interview = () => {
 
     const getBatches = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/batches");
+        const res = await axios.get("/api/batches");
         setBatches(res.data);
       } catch (error) {
         console.error("Error fetching batches:", error);
@@ -51,10 +51,7 @@ const Interview = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "http://localhost:8000/api/interviews/create",
-        form
-      );
+      const res = await axios.post("/api/interviews/create", form);
       console.log("Interview created:", res.data);
       alert("Interview created successfully!");
       setForm({

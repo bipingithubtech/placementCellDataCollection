@@ -11,7 +11,7 @@ const StudentList = () => {
   useEffect(() => {
     const FetchStudents = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/student/getall");
+        const res = await axios.get("/api/student/getall");
         console.log("data", res.data);
         if (Array.isArray(res.data)) {
           setStudents(res.data);
@@ -27,7 +27,7 @@ const StudentList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/api/student/${id}`);
+      await axios.delete(`/api/student/${id}`);
       setStudents(students.filter((student) => student._id !== id));
     } catch (err) {
       console.error("Error deleting student:", err);

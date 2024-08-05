@@ -13,8 +13,8 @@ const CreteResult = () => {
     const fetchInterviewsAndStudents = async () => {
       try {
         const [interviewRes, studentRes] = await Promise.all([
-          axios.get("http://localhost:8000/api/interviews/allInterview"),
-          axios.get("http://localhost:8000/api/student/getall"),
+          axios.get("/api/interviews/allInterview"),
+          axios.get("/api/student/getall"),
         ]);
         setInterviews(interviewRes.data);
         setStudents(studentRes.data);
@@ -30,7 +30,7 @@ const CreteResult = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:8000/api/StudentResult/addResult", {
+      await axios.post("/api/StudentResult/addResult", {
         interviewId,
         studentId,
         result,

@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const logout = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/user/logout");
+      const res = await axios.get("/api/user/logout");
       setToken(null);
     } catch {
       console.log("error while logout");
